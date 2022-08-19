@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/Bhadmus/IdeaProjects/Bhadmus">
+    <test verbose="2" preserve-order="true" name="C:/Users/Bhadmus/IdeaProjects/Assessment/Bhadmus">
         <classes>
             <class name="testcasesapi.JsonRunTime">
                 <methods>
-                    <include name="getUserEmailToConsole"/>
-                    <include name="verifyIDRangePerUser"/>
-                    <include name="postCommentAndVerifyResponse"/>
+                    <include name="printEmail"/>
+                    <include name="checkIDIsInRange"/>
+                    <include name="verifyNonEmptyPost"/>
                 </methods>
             </class>
         </classes>

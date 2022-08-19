@@ -7,19 +7,24 @@ public class JsonRunTime {
     JsonStore runner = new JsonStore();
 
     @Test(priority = 0)
-    public void getUserEmailToConsole(){
-        runner.logRandomUserEmailToConsole();
+    public void printEmail(){
+
+        runner.printUsernameToConsole();
+
     }
 
     @Test(priority = 1)
-     public void verifyIDRangePerUser(){
-        runner.getIDsAndVerifyRange();
+     public void checkIDIsInRange(){
+
+        runner.getUSerIDAndVerifyRange();
 
     }
 
     @Test(priority = 2)
-    public void postCommentAndVerifyResponse(){
-        runner.postCommentWithRandomID();
+    public void verifyNonEmptyPost(){
+
+        runner.postNonEmptyComment();
+
     }
 }
 

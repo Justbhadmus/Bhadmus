@@ -13,7 +13,7 @@ public class JsonStore {
 
     String baseURI = "https://jsonplaceholder.typicode.com";
     Random picker = new Random();
-    int pick = getRandomUserID(getAllUsersID());
+    int pick = pickRandomUserId(getAllUsersID());
     // Get all IDs
     public ArrayList getAllUsersID(){
         Response resp = given()
@@ -23,18 +23,18 @@ public class JsonStore {
         return id;
     }
     // Gets a random userID
-    public int getRandomUserID(ArrayList m){
+    public int pickRandomUserId(ArrayList m){
         return (int) m.get(picker.nextInt(m.size()));
     }
 
-    public boolean rangeChecker(ArrayList l){
+    public boolean checkNumberRange(ArrayList l){
         for(int i=0; i < l.size(); i++){
             return((int)l.get(i)>1 && (int)l.get(i)<100);
         }
         return false;
     }
 
-    public void logRandomUserEmailToConsole(){
+    public void printUsernameToConsole(){
         String basePATH = String.format(baseURI+"/users/%d", pick);
         Response resp = given()
                 .contentType(ContentType.JSON)
@@ -44,17 +44,17 @@ public class JsonStore {
         System.out.println(email);
     }
 
-    public void getIDsAndVerifyRange(){
+    public void getUSerIDAndVerifyRange(){
         String basePATH = String.format(baseURI+"/users/%d/posts", pick);
         Response resp = given()
                 .contentType(ContentType.JSON)
                 .when().get(basePATH);
         ArrayList id = resp.then().extract().path("id");
-        System.out.println(rangeChecker(id));
+        System.out.println(checkNumberRange(id));
 
     }
 
-    public void postCommentWithRandomID(){
+    public void postNonEmptyComment(){
         Response resp = given()
                 .contentType(ContentType.JSON)
                 .body(String.format("{\n" +
