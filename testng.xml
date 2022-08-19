@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/Bhadmus/IdeaProjects/Bhadmus">
+        <classes>
+            <class name="testcasesapi.JsonRunTime">
+                <methods>
+                    <include name="getUserEmailToConsole"/>
+                    <include name="verifyIDRangePerUser"/>
+                    <include name="postCommentAndVerifyResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
